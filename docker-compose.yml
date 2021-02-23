@@ -1,0 +1,15 @@
+version: "3.0"
+
+services:
+  web:
+    hostname: php-environment-web
+    image: hazuki3417/ubuntu_nginx_php:latest
+    container_name: php-environment-web
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/var/www
+    tty: true
+

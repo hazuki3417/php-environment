@@ -1,0 +1,30 @@
+{
+    "name": "hazuki3417/php-environment",
+    "description": "",
+    "type": "library",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "takashi kudo",
+            "email": "hazuki3417@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Selen\\Environment\\": "src/Environment"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.18",
+        "phpunit/phpunit": "^9.5",
+        "phpdocumentor/phpdocumentor": "^3.0",
+        "mockery/mockery": "^1.4"
+    }
+}
