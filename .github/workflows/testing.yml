@@ -33,7 +33,7 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
       run: |
-        ./cc-test-reporter format-coverage ./docs/coverage-clover.xml --input-type clover
+        ./cc-test-reporter format-coverage ./docs/coverage/clover.xml --input-type clover
         ./cc-test-reporter upload-coverage -r $CC_TEST_REPORTER_ID
 
     # [Reference]
