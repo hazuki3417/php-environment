@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check the execution environment
+      run: |
+        ls -al
+        php -v
+
     - name: Checkout repository
       uses: actions/checkout@main
 

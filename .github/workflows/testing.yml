@@ -9,9 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check the execution environment
+      run: |
+        ls -al
+        php -v
+
     - name: Checkout repository
       uses: actions/checkout@main
-
 
     - name: Validate composer.json and composer.lock
       run: composer validate
@@ -32,7 +36,6 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
       run: |
-        ls -al ./
         ./cc-test-reporter format-coverage ./docs/coverage/clover.xml --input-type clover
         ./cc-test-reporter upload-coverage -r $CC_TEST_REPORTER_ID
 
