@@ -21,8 +21,7 @@ jobs:
 
 
     - name: Generate Coverage
-      run: php ./vendor/bin/phpunit -c ./phpunit.xml
-
+      run: php ./vendor/bin/phpunit
 
     - name: Install Code Climate Reporter 
       run: |
@@ -33,6 +32,7 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
       run: |
+        ls -al ./
         ./cc-test-reporter format-coverage ./docs/coverage/clover.xml --input-type clover
         ./cc-test-reporter upload-coverage -r $CC_TEST_REPORTER_ID
 
